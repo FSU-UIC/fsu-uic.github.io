@@ -1,40 +1,25 @@
-# FSU Ubiquitous & Intelligence Computing Group
+# FSU UIC Website
 
-Website for the Ubiquitous & Intelligence Computing Group in the Department of
-Computer Science at Florida State University.
+Static website for the Ubiquitous & Intelligence Computing Group in the
+Department of Computer Science at Florida State University.
 
-FSU UIC develops ubiquitous intelligent systems for real-world applications by
-integrating hardware, systems and networks, artificial intelligence, and
-human-centered computing.
+## Run Locally
 
-## Development
-
-Requires Node.js `>=22.13.0`.
+No installation or build step is required. Open `index.html` directly, or serve
+the directory with any static web server:
 
 ```bash
-npm install
-npm run dev
+python3 -m http.server 8000
 ```
 
-The local site runs at [http://localhost:3000](http://localhost:3000).
+Then visit [http://localhost:8000](http://localhost:8000).
 
-## Verification
+## Files
 
-```bash
-npm run lint
-npm test
-```
+- `index.html` contains all website content.
+- `styles.css` contains the responsive layout and visual design.
+- `assets/` contains the architecture figure and favicon.
 
-`npm test` creates a production build and verifies the server-rendered homepage.
+## GitHub Pages
 
-## Project Structure
-
-- `app/` contains the website layout, content, and styles.
-- `public/` contains static visual assets.
-- `tests/` contains rendered-page checks.
-- `worker/` and `vite.config.ts` provide the vinext/Cloudflare runtime.
-- `.openai/hosting.json` links the project to its Sites deployment.
-
-## Live Website
-
-[intelligence-computing-group.teyenwu.chatgpt.site](https://intelligence-computing-group.teyenwu.chatgpt.site)
+The site is ready to publish from the repository root on the `main` branch.
