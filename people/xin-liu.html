@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Xin Liu, Assistant Professor of Computer Science at Florida State University, leads XL-Stack Lab and builds full-stack systems from RF front ends to Physical AI."
+    />
+    <title>Xin Liu | FSU Ubiquitous &amp; Intelligence Computing Group</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="profile.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <div class="university-bar">
+      <a href="https://www.fsu.edu/">Florida State University</a>
+      <span>Department of Computer Science</span>
+    </div>
+
+    <header class="site-header">
+      <a class="letter-mark" href="../index.html" aria-label="FSU UIC home">
+        <span>FSU</span>
+        <span>UIC</span>
+      </a>
+      <div>
+        <p>Ubiquitous &amp; Intelligence Computing Group</p>
+        <span>Florida State University</span>
+      </div>
+    </header>
+
+    <main id="main">
+      <nav class="crumb" aria-label="Breadcrumb">
+        <a href="../index.html">FSU UIC</a>
+        <span aria-hidden="true">/</span>
+        <span>Xin Liu</span>
+      </nav>
+
+      <section class="profile-hero">
+        <div class="profile-portrait">
+          <img
+            src="../assets/people/xin-liu.jpg"
+            alt="Portrait of Xin Liu"
+            width="900"
+            height="900"
+          />
+        </div>
+
+        <div class="profile-identity">
+          <p class="eyebrow">Faculty</p>
+          <h1>Xin Liu</h1>
+          <p class="profile-title">
+            Assistant Professor, Department of Computer Science<br />
+            Director, XL-Stack Lab
+          </p>
+          <p class="profile-lead">
+            I build full-stack wireless and sensing systems, from the RF front end all the way up to
+            foundation models. My goal is to turn NextG networks into a self-evolving neural
+            infrastructure that bridges the digital and the physical world.
+          </p>
+
+          <dl class="profile-contact">
+            <div>
+              <dt>Email</dt>
+              <dd>xliu15 [at] fsu [dot] edu</dd>
+            </div>
+            <div>
+              <dt>Office</dt>
+              <dd>Love Building, Room 160</dd>
+            </div>
+          </dl>
+
+          <p class="profile-links">
+            <a href="https://xinliulab.github.io/" target="_blank" rel="noopener noreferrer">Homepage</a>
+            <a href="https://xinliulab.github.io/lab.html" target="_blank" rel="noopener noreferrer">XL-Stack Lab</a>
+            <a href="https://scholar.google.com/citations?user=w-GyGM4AAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            <a href="https://github.com/xinliulab" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://xinliulab.github.io/publication/cv_xinliu_fsu.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="profile-section" id="approach">
+        <p class="eyebrow">Approach</p>
+        <h2>One problem, five layers</h2>
+        <p class="section-lead">
+          Ubiquitous intelligence breaks whenever a layer is treated in isolation: a waveform that
+          ignores the radio front end, a sensing pipeline that ignores the network, a model that
+          ignores the physics of the signal it consumes. My work follows a single vertical cut
+          through the stack, which we call <strong>XL-Stack</strong>. Each layer is a research
+          contribution in its own right, and each one is designed so the layer above it can stand on
+          it. The sections below walk the stack from the bottom up.
+        </p>
+
+        <ol class="stack-figure" aria-label="XL-Stack research layers, top to bottom">
+          <li class="stack-band stack-band-5">
+            <span class="stack-tag">L5</span>
+            <span class="stack-name">Intelligence &amp; Physical AI</span>
+            <span class="stack-note">Foundation models that understand and generate physical motion</span>
+          </li>
+          <li class="stack-band stack-band-4">
+            <span class="stack-tag">L4</span>
+            <span class="stack-name">Integrated Sensing &amp; Communication</span>
+            <span class="stack-note">The same radio both carries data and perceives the world</span>
+          </li>
+          <li class="stack-band stack-band-3">
+            <span class="stack-tag">L3</span>
+            <span class="stack-name">Cross-Technology Networking &amp; Spectrum</span>
+            <span class="stack-note">Heterogeneous radios sharing one crowded band</span>
+          </li>
+          <li class="stack-band stack-band-2">
+            <span class="stack-tag">L2</span>
+            <span class="stack-name">mmWave Links &amp; Beam Management</span>
+            <span class="stack-note">Directional links that find and hold each other in milliseconds</span>
+          </li>
+          <li class="stack-band stack-band-1">
+            <span class="stack-tag">L1</span>
+            <span class="stack-name">Signals, Waveforms &amp; Battery-Free Hardware</span>
+            <span class="stack-note">Bits carried by ambient energy and reshaped waveforms</span>
+          </li>
+        </ol>
+
+        <p class="stack-crosscut">
+          <span>Cross-cutting</span> Security &amp; privacy is not a sixth layer. Every layer leaks,
+          and every layer can be attacked, so it is studied inside all five.
+        </p>
+      </section>
+
+      <section class="profile-section layer-section" id="l1">
+        <div class="layer-head">
+          <span class="layer-tag">L1</span>
+          <div>
+            <h2>Signals, Waveforms &amp; Battery-Free Hardware</h2>
+            <p>
+              At the bottom of the stack the question is how little power a device needs to say
+              something. Backscatter answers it by reflecting the signals already in the air rather
+              than generating new ones — which means the physical layer of an existing standard has
+              to be reverse-engineered and then rebuilt on a device with almost no energy budget.
+            </p>
+          </div>
+        </div>
+
+        <ul class="pub-list">
+          <li>
+            <p class="pub-venue">USENIX NSDI 2020</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/20nsdi_vmscatter.pdf" target="_blank" rel="noopener noreferrer">VMscatter: A Versatile MIMO Backscatter</a>
+            </h3>
+            <p class="pub-authors"><strong>Xin Liu</strong>, Zicheng Chi, Wei Wang, Yao Yao, Ting Zhu</p>
+            <p class="pub-links">
+              <a href="https://github.com/EMDCYY/VMscatter" target="_blank" rel="noopener noreferrer">Code</a>
+              <a href="https://www.youtube.com/watch?v=VmTwuIvwjZ8" target="_blank" rel="noopener noreferrer">Talk</a>
+            </p>
+          </li>
+          <li>
+            <p class="pub-venue">USENIX NSDI 2021</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/21nsdi_tscatter.pdf" target="_blank" rel="noopener noreferrer">Verification and Redesign of OFDM Backscatter</a>
+            </h3>
+            <p class="pub-authors"><strong>Xin Liu</strong>, Zicheng Chi, Wei Wang, Yao Yao, Pei Hao, Ting Zhu</p>
+            <p class="pub-links">
+              <a href="https://github.com/EMDCYY/TScatter" target="_blank" rel="noopener noreferrer">Code</a>
+              <a href="https://www.youtube.com/watch?v=He8KyfwjxqYr" target="_blank" rel="noopener noreferrer">Talk</a>
+            </p>
+          </li>
+          <li>
+            <p class="pub-venue">ACM SIGCOMM 2020</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/20sigcomm_lscatter.pdf" target="_blank" rel="noopener noreferrer">Leveraging Ambient LTE Traffic for Ubiquitous Passive Communication</a>
+            </h3>
+            <p class="pub-authors">Zicheng Chi, <strong>Xin Liu</strong> (co-primary), Wei Wang, Yao Yao, Ting Zhu</p>
+          </li>
+          <li>
+            <p class="pub-venue">IEEE INFOCOM 2026</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/26infocom_hydrochirp.pdf" target="_blank" rel="noopener noreferrer">HydroChirp: Dynamic Chirp Shaping for Reliable and Ultra-Long-Range Underwater Communication</a>
+            </h3>
+            <p class="pub-authors">Chiyu Zhou, Zijian Wan, Baodong Chen, Zicheng Chi, <strong>Xin Liu</strong>, Wei Wang</p>
+          </li>
+          <li>
+            <p class="pub-venue">IEEE INFOCOM 2025</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/25infocom_pscatter.pdf" target="_blank" rel="noopener noreferrer">Energy-Efficient Paging for Duty-Cycled LTE Backscatter</a>
+            </h3>
+            <p class="pub-authors">Yunyun Feng, <strong>Xin Liu</strong>, Jia Zhao, Yuan Ding, Gongpu Wang, Wei Gong</p>
+          </li>
+          <li>
+            <p class="pub-venue">IEEE INFOCOM 2024</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/24infocom_effblue.pdf" target="_blank" rel="noopener noreferrer">Efficient Two-Way Edge Backscatter with Commodity Bluetooth</a>
+            </h3>
+            <p class="pub-authors">Maoran Jiang, <strong>Xin Liu</strong>, Li Dong, Wei Gong</p>
+          </li>
+          <li>
+            <p class="pub-venue">ACM SenSys 2018</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/18sensys_passivezigbee.pdf" target="_blank" rel="noopener noreferrer">Passive-ZigBee: Enabling ZigBee Communication in IoT Networks with 1000X+ Less Power Consumption</a>
+            </h3>
+            <p class="pub-authors">Yan Li, Zicheng Chi, <strong>Xin Liu</strong>, Ting Zhu</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="profile-section layer-section" id="l2">
+        <div class="layer-head">
+          <span class="layer-tag">L2</span>
+          <div>
+            <h2>mmWave Links &amp; Beam Management</h2>
+            <p>
+              Millimeter wave buys enormous bandwidth and charges for it in alignment: the link only
+              exists while two pencil beams point at each other. This layer is about making that
+              alignment fast enough and cheap enough that the layers above never have to think about
+              it.
+            </p>
+          </div>
+        </div>
+
+        <ul class="pub-list">
+          <li>
+            <p class="pub-venue">ACM SenSys 2026</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/26sensys_0cal.pdf" target="_blank" rel="noopener noreferrer">0cal: Zero-Cost Calibration for mmWave Networks</a>
+            </h3>
+            <p class="pub-authors"><strong>Xin Liu</strong>, Wei-Han Chen, Kannan Srinivasan</p>
+            <p class="pub-links">
+              <a href="https://github.com/xinliulab/26SenSys_0cal" target="_blank" rel="noopener noreferrer">Code / Dataset</a>
+            </p>
+          </li>
+          <li>
+            <p class="pub-venue">IEEE INFOCOM 2024</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/24infocom_ftp.pdf" target="_blank" rel="noopener noreferrer">FTP: Enabling Fast Beam-Training for Optimal mmWave Beamforming</a>
+            </h3>
+            <p class="pub-authors">Wei-Han Chen, <strong>Xin Liu</strong> (co-primary), Kannan Srinivasan, Srinivasan Parthasarathy</p>
+            <p class="pub-links">
+              <a href="https://github.com/xinliulab/24InfoCom_FTP" target="_blank" rel="noopener noreferrer">Code / Dataset</a>
+            </p>
+          </li>
+          <li>
+            <p class="pub-venue">ACM MobiWac 2023</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/23mobiwac_swift.pdf" target="_blank" rel="noopener noreferrer">Fast and Optimal Beam Alignment for Off-the-Shelf mmWave Devices</a>
+            </h3>
+            <p class="pub-authors">Wei-Han Chen, <strong>Xin Liu</strong>, Kannan Srinivasan, Srinivasan Parthasarathy</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="profile-section layer-section" id="l3">
+        <div class="layer-head">
+          <span class="layer-tag">L3</span>
+          <div>
+            <h2>Cross-Technology Networking &amp; Spectrum</h2>
+            <p>
+              Wi-Fi, ZigBee, Bluetooth and LTE share the same air but were never designed to talk to
+              each other. This layer makes incompatible radios interoperate directly — without a
+              gateway, without new hardware — and studies what happens to the spectrum when they do.
+            </p>
+          </div>
+        </div>
+
+        <ul class="pub-list">
+          <li>
+            <p class="pub-venue">ACM MobiSys 2018</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/18mobisys_chiron.pdf" target="_blank" rel="noopener noreferrer">Chiron: Concurrent High Throughput Communication for IoT Devices</a>
+            </h3>
+            <p class="pub-authors">Yan Li, Zicheng Chi, <strong>Xin Liu</strong>, Ting Zhu</p>
+          </li>
+          <li>
+            <p class="pub-venue">ACM SenSys 2019</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/19sensys_pic.pdf" target="_blank" rel="noopener noreferrer">Parallel Inclusive Communication for Connecting Heterogeneous IoT Devices at the Edge</a>
+            </h3>
+            <p class="pub-authors">Zicheng Chi, Yan Li, <strong>Xin Liu</strong>, Yao Yao, Yanchao Zhang, Ting Zhu</p>
+          </li>
+          <li>
+            <p class="pub-venue">IEEE INFOCOM 2019</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/19infocom_crf.pdf" target="_blank" rel="noopener noreferrer">CRF: Coexistent Routing and Flooding using Wi-Fi Packets in Heterogeneous IoT Networks</a>
+            </h3>
+            <p class="pub-authors">Wei Wang, <strong>Xin Liu</strong>, Yao Yao, Yan Pan, Zicheng Chi, Ting Zhu</p>
+          </li>
+          <li>
+            <p class="pub-venue">IEEE INFOCOM 2018</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/18infocom_ect.pdf" target="_blank" rel="noopener noreferrer">ECT: Exploiting Cross-Technology Concurrent Transmission for Reducing Packet Delivery Delay in IoT Networks</a>
+            </h3>
+            <p class="pub-authors">Wei Wang, Tiantian Xie, <strong>Xin Liu</strong>, Ting Zhu</p>
+          </li>
+          <li>
+            <p class="pub-venue">IEEE ICNP 2021</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/21icnp_etc.pdf" target="_blank" rel="noopener noreferrer">Exploiting Wi-Fi AP for Simultaneous Data Dissemination among Wi-Fi and ZigBee Devices</a>
+            </h3>
+            <p class="pub-authors">Wei Wang, <strong>Xin Liu</strong>, Yao Yao, Ting Zhu</p>
+          </li>
+          <li>
+            <p class="pub-venue">ACM AsiaCCS 2024</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/24asiaccs_kep.pdf" target="_blank" rel="noopener noreferrer">Key Establishment for Secure Asymmetric Cross-Technology Communication</a>
+            </h3>
+            <p class="pub-authors">Wei Wang, <strong>Xin Liu</strong>, Zicheng Chi, Stuart Ray, Ting Zhu</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="profile-section layer-section" id="l4">
+        <div class="layer-head">
+          <span class="layer-tag">L4</span>
+          <div>
+            <h2>Integrated Sensing &amp; Communication</h2>
+            <p>
+              Once a radio is understood well enough to be rebuilt, it can be asked to do a second
+              job: perceive. This layer extracts respiration, gesture, pose and identity from the
+              same commodity signals that are already carrying data — and asks what a person's body
+              involuntarily reveals to any receiver in the room.
+            </p>
+          </div>
+        </div>
+
+        <ul class="pub-list">
+          <li>
+            <p class="pub-venue">ACM IMWUT / UbiComp 2026</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/26ubicomp_muralfi.pdf" target="_blank" rel="noopener noreferrer">MURAL-Fi: Multi-User Respiration Authentication Leveraging Wi-Fi</a>
+            </h3>
+            <p class="pub-authors">Bofan Li, <strong>Xin Liu</strong>, Yichao Wang, Yili Ren, Weikuan Yu</p>
+          </li>
+          <li>
+            <p class="pub-venue">ACM IMWUT / UbiComp 2026</p>
+            <h3>BFMScan: Enabling Explicit Angle-Resolved Sensing via Beamforming Feedback Matrix</h3>
+            <p class="pub-authors">Bofan Li, Zhuoyuan Liu, Zhankai Ye, Weikuan Yu, <strong>Xin Liu</strong></p>
+            <p class="pub-links"><span class="pub-flag">Code / dataset to appear</span></p>
+          </li>
+          <li>
+            <p class="pub-venue">IEEE S&amp;P 2026 &middot; Distinguished Artifact Award</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/26sp_2fia.pdf" target="_blank" rel="noopener noreferrer">2FiA: Towards WiFi Sensing-Based Authentication with Unique Biometrics</a>
+            </h3>
+            <p class="pub-authors">Bofan Li, Zhankai Ye, Weikuan Yu, Yongning Tang, <strong>Xin Liu</strong></p>
+            <p class="pub-links">
+              <a href="https://zenodo.org/records/17361618" target="_blank" rel="noopener noreferrer">Code / Dataset</a>
+            </p>
+          </li>
+          <li>
+            <p class="pub-venue">Computer Networks 2025</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/25cn_ojrc.pdf" target="_blank" rel="noopener noreferrer">O-JRC: An Open Source Software Platform for mmWave Joint Radar-Communication Development and Experimentation</a>
+            </h3>
+            <p class="pub-authors"><strong>Xin Liu</strong>, Haocheng Zhu, Eylem Ekici</p>
+            <p class="pub-links">
+              <a href="https://u.osu.edu/ekici/jrc-testbed/" target="_blank" rel="noopener noreferrer">Project Page</a>
+              <a href="https://github.com/mmWave-MIMO-Testbed/O-JRC" target="_blank" rel="noopener noreferrer">Code</a>
+            </p>
+          </li>
+          <li>
+            <p class="pub-venue">ACM SenSys 2018</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/18sensys_ear.pdf" target="_blank" rel="noopener noreferrer">EAR: Exploit Uncontrollable Ambient RF Signals in Heterogeneous Networks for Gesture Recognition</a>
+            </h3>
+            <p class="pub-authors">Zicheng Chi, Yao Yao, Tiantian Xie, <strong>Xin Liu</strong>, Zhichuan Huang, Wei Wang, Ting Zhu</p>
+          </li>
+          <li>
+            <p class="pub-venue">IEEE INFOCOM 2018</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/18infocom_aegis.pdf" target="_blank" rel="noopener noreferrer">Aegis: An Interference-Negligible RF Sensing Shield</a>
+            </h3>
+            <p class="pub-authors">Yao Yao, Yan Li, <strong>Xin Liu</strong>, Zicheng Chi, Wei Wang, Tiantian Xie, Ting Zhu</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="profile-section layer-section" id="l5">
+        <div class="layer-head">
+          <span class="layer-tag">L5</span>
+          <div>
+            <h2>Intelligence &amp; Physical AI</h2>
+            <p>
+              The top of the stack is where measurements become understanding. We build models that
+              read human motion from wireless and visual signals, generate it, and run inside the
+              tight budget of an edge device — grounded in the geometry and physics of the layers
+              underneath rather than treating the signal as an opaque tensor.
+            </p>
+          </div>
+        </div>
+
+        <ul class="pub-list">
+          <li>
+            <p class="pub-venue">EMNLP 2026</p>
+            <h3>
+              <a href="https://arxiv.org/abs/2601.07632" target="_blank" rel="noopener noreferrer">GeoMotionGPT: Geometry-Aligned Motion Understanding with Large Language Models</a>
+            </h3>
+            <p class="pub-authors">Zhankai Ye, Bofan Li, Yukai Jin, Shuoqiu Li, Wei Wang, Yanfu Zhang, Shangqian Gao, <strong>Xin Liu</strong></p>
+            <p class="pub-links">
+              <a href="https://github.com/JYe16/GeoMotionGPT" target="_blank" rel="noopener noreferrer">Code / Dataset</a>
+            </p>
+          </li>
+          <li>
+            <p class="pub-venue">arXiv 2026</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/26arxiv_mugen.pdf" target="_blank" rel="noopener noreferrer">MUGEN: A Unified Framework for Efficient Motion Understanding and Generation</a>
+            </h3>
+            <p class="pub-authors">Zhankai Ye, Yukai Jin, Bingyang Wei, Bofan Li, Yusen Wu, Fangyi Li, Shangqian Gao, <strong>Xin Liu</strong></p>
+            <p class="pub-links">
+              <a href="https://jye16.github.io/mugen-page/" target="_blank" rel="noopener noreferrer">Project Page</a>
+            </p>
+          </li>
+          <li>
+            <p class="pub-venue">IEEE FG 2026</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/26fg_arise.pdf" target="_blank" rel="noopener noreferrer">ARiSE: Efficient Mesh-Based Action Recognition from Wi-Fi Sensing on Edge Devices</a>
+            </h3>
+            <p class="pub-authors">Zhankai Ye, Shuoqiu Li, Bofan Li, Yili Ren, Bo Mei, Shangqian Gao, <strong>Xin Liu</strong></p>
+          </li>
+          <li>
+            <p class="pub-venue">ACL Findings 2026</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/26findings_hyperedit.pdf" target="_blank" rel="noopener noreferrer">HyperEdit: Unlocking Instruction-based Text Editing in LLMs via Hypernetworks</a>
+            </h3>
+            <p class="pub-authors">Yiming Zeng, Jinghan Cao, Zexin Li, Wanhao Yu, Zhankai Ye, Dawei Xiang, Ting Hua, <strong>Xin Liu</strong>, Shangqian Gao, Tingting Yu</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="profile-section layer-section" id="security">
+        <div class="layer-head">
+          <span class="layer-tag layer-tag-cross">&#8942;</span>
+          <div>
+            <h2>Cross-Cutting: Security &amp; Privacy</h2>
+            <p>
+              Every technique that lets a system perceive more also lets an adversary perceive more.
+              This thread runs vertically through the stack: side channels in optical and RF links,
+              attacks on autonomous vehicles through invisible light, jamming across incompatible
+              radios, and defenses built at the layer where the leak actually happens.
+            </p>
+          </div>
+        </div>
+
+        <ul class="pub-list">
+          <li>
+            <p class="pub-venue">USENIX Security 2023</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/23sec_lightthief.pdf" target="_blank" rel="noopener noreferrer">LightThief: Your Optical Communication Information is Stolen behind the Wall</a>
+            </h3>
+            <p class="pub-authors"><strong>Xin Liu</strong>, Wei Wang, Guanqun Song, Ting Zhu</p>
+            <p class="pub-links">
+              <a href="https://github.com/xinliulab/23Security_LightThief" target="_blank" rel="noopener noreferrer">Code</a>
+              <a href="https://www.usenix.org/conference/usenixsecurity23/presentation/liu-xin" target="_blank" rel="noopener noreferrer">Talk</a>
+            </p>
+          </li>
+          <li>
+            <p class="pub-venue">ACM CCS 2021</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/21ccs_icsl.pdf" target="_blank" rel="noopener noreferrer">I Can See the Light: Attacks on Autonomous Vehicles Using Invisible Lights</a>
+            </h3>
+            <p class="pub-authors">Wei Wang, Yao Yao, <strong>Xin Liu</strong>, Xiang Li, Hao Pei, Ting Zhu</p>
+          </li>
+          <li>
+            <p class="pub-venue">ACM WiSec 2020</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/20wisec_ctcattack.pdf" target="_blank" rel="noopener noreferrer">Countering Cross-Technology Jamming Attack</a>
+            </h3>
+            <p class="pub-authors">Zicheng Chi, Yan Li, <strong>Xin Liu</strong>, Wei Wang, Yao Yao, Ting Zhu, Yanchao Zhang</p>
+          </li>
+          <li>
+            <p class="pub-venue">IEEE MILCOM 2022</p>
+            <h3>
+              <a href="https://xinliulab.github.io/publication/22milcom_secprotocol.pdf" target="_blank" rel="noopener noreferrer">A Secured Protocol for IoT Devices in Tactical Networks</a>
+            </h3>
+            <p class="pub-authors">Wei Wang, Zicheng Chi, <strong>Xin Liu</strong>, Ananth Vishnu Bhaskar, Ankit Baingane, Ryan Jahnige, Qingquan Zhang, Ting Zhu</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="profile-section" id="background">
+        <p class="eyebrow">Background</p>
+        <h2>Before FSU</h2>
+        <p class="section-lead">
+          I was a postdoctoral scholar at the
+          <a href="https://aiedge.osu.edu/" target="_blank" rel="noopener noreferrer">NSF AI-EDGE Institute</a>
+          at The Ohio State University, working with Prof. Ness Shroff, Prof. Eylem Ekici and Prof.
+          Kannan Srinivasan on bringing machine learning into next-generation wireless networks. I
+          received my Ph.D. from the University of Maryland, Baltimore County, advised by Prof. Ting
+          Zhu, on wireless communication, networking, sensing and security. Before academia I spent
+          years building high-precision measurement instruments end to end — high-speed and
+          high-power circuits, MCU/FPGA/DSP/ARM firmware, sensor integration, laser measurement and
+          projection, motor and mechanical control — which is where the habit of reasoning across
+          the whole stack comes from.
+        </p>
+        <p class="section-lead">
+          I am always glad to hear from students and collaborators, especially those working at the
+          seam between two of these layers.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <strong>FSU UIC</strong>
+        <span>Ubiquitous &amp; Intelligence Computing Group</span>
+      </div>
+      <div>
+        <a href="../index.html">Group Home</a>
+        <a href="https://www.cs.fsu.edu/">Department of Computer Science</a>
+        <a href="https://www.fsu.edu/">Florida State University</a>
+      </div>
+    </footer>
+  </body>
+</html>
