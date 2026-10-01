@@ -1,6 +1,6 @@
 # FSU UIC Website
 
-Static website for the Ubiquitous & Intelligence Computing Group in the
+Static website for the Ubiquitous Intelligence & Computing Group in the
 Department of Computer Science at Florida State University.
 
 ## Run Locally
