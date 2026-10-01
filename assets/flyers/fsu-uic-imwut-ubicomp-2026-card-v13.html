@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FSU UIC at UbiComp/ISWC 2026</title>
+    <meta
+      name="description"
+      content="Printable 7 x 5 inch card listing the FSU Ubiquitous Intelligence & Computing Group's IMWUT papers at UbiComp/ISWC 2026."
+    />
+    <style>
+      /*
+        Card size. Change these two values (and the matching @page size) to
+        re-size the whole flyer; everything else is laid out relative to them.
+      */
+      :root {
+        --card-w: 7in;
+        --card-h: 5in;
+
+        --garnet: #782f40;
+        --gold: #ceb888;
+        --ink: #1f2022;
+        --muted: #5f6165;
+        --line: #deddd9;
+        --white: #ffffff;
+
+        /* One color per lab, taken from each lab's own homepage: the card tint,
+           accent rule, system name, talk badge, and credit line all use it. */
+        --lab-xl: #2a5d8f; /* xinliulab.github.io lab page */
+        --lab-dcs: #ea6006; /* orange of the DCS Lab logo */
+        --lab-makex: #4f1d2a; /* MakeX Lab site background */
+        --lab-mws: #6f4c93; /* purple for the group's paper cards */
+        --mws-mark: #111820; /* the group's own M/W mark is black on its homepage */
+      }
+
+      @page {
+        size: 7in 5in;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #cfcdc8;
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      @media print {
+        body {
+          min-height: 0;
+          display: block;
+          background: none;
+        }
+      }
+
+      .card {
+        width: var(--card-w);
+        height: var(--card-h);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        background: var(--white);
+      }
+
+      @media screen {
+        .card {
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+      }
+
+      /* ---------- Header: FSU lockup | group name ---------- */
+
+      .header {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 12pt;
+        padding: 9pt 20pt 8pt;
+        background: var(--garnet);
+        color: var(--white);
+        border-bottom: 3pt solid var(--gold);
+      }
+
+      .header-logo {
+        flex: 0 0 auto;
+        display: block;
+        height: 25pt;
+        width: auto;
+        padding-right: 12pt;
+        border-right: 0.75pt solid rgba(206, 184, 136, 0.55);
+      }
+
+      .header-text {
+        flex: 1 1 auto;
+        min-width: 0;
+      }
+
+      .header h1 {
+        margin: 0 0 2.5pt;
+        font-size: 15pt;
+        line-height: 1.1;
+        letter-spacing: 0.01em;
+        white-space: nowrap;
+        color: var(--gold);
+      }
+
+      .header-meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 10pt;
+        font-size: 6.3pt;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      /* ---------- Six equal boxes ---------- */
+
+      /* Left column: papers with a talk, in schedule order (Tue, Wed, Thu).
+         Right column: papers without a talk. */
+      .papers {
+        flex: 1 1 auto;
+        min-height: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+        grid-auto-flow: column;
+        gap: 5pt 9pt;
+        margin: 0;
+        padding: 7pt 20pt 6pt;
+        list-style: none;
+      }
+
+      /*
+        Every box is the same size; what happens inside is up to the paper.
+        Each box is a small grid of three parts (fig, head, body) that the
+        layout classes below arrange differently.
+      */
+      .paper {
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
+        display: grid;
+        gap: 3pt 7pt;
+        padding: 5pt 6pt 5pt 7pt;
+        border-top: 2pt solid var(--lab);
+        background: color-mix(in srgb, var(--lab) 6%, var(--white));
+      }
+
+      .fig {
+        grid-area: fig;
+        min-width: 0;
+        min-height: 0;
+        margin: 0;
+        padding: 2pt;
+        background: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .fig img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .head {
+        grid-area: head;
+        min-width: 0;
+      }
+
+      .body {
+        grid-area: body;
+        min-width: 0;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Figure on the right, text on the left. */
+      .layout-fig-right {
+        grid-template-columns: minmax(0, 1fr) var(--fig, 50%);
+        grid-template-rows: auto minmax(0, 1fr);
+        grid-template-areas:
+          "head fig"
+          "body fig";
+      }
+
+      /* Figure on the left, text on the right. */
+      .layout-fig-left {
+        grid-template-columns: var(--fig, 50%) minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, 1fr);
+        grid-template-areas:
+          "fig head"
+          "fig body";
+      }
+
+      /* Figure on the right with the talk and DOI under it; text on the left. */
+      .layout-fig-right-meta {
+        grid-template-columns: minmax(0, 1fr) var(--fig, 50%);
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        grid-template-areas:
+          "head fig"
+          "body fig"
+          "body meta";
+      }
+
+      /* Figure on the left with the talk and DOI under it; text on the right. */
+      .layout-fig-left-meta {
+        grid-template-columns: var(--fig, 50%) minmax(0, 1fr);
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        grid-template-areas:
+          "fig head"
+          "fig body"
+          "meta body";
+      }
+
+      .layout-fig-left-meta .meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5pt;
+      }
+
+      .meta {
+        grid-area: meta;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 4pt;
+      }
+
+      .meta .talk {
+        margin: 0;
+      }
+
+      .meta .doi {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Figure in the top-left corner, name beside it, details across the bottom. */
+      .layout-corner {
+        grid-template-columns: var(--fig, 62%) minmax(0, 1fr);
+        grid-template-rows: minmax(0, 1fr) auto;
+        grid-template-areas:
+          "fig head"
+          "body body";
+      }
+
+      /* ---------- Type: one role, one style ---------- */
+
+      .lab-name {
+        margin: 0;
+        font-size: 5pt;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        color: var(--lab);
+      }
+
+      .system {
+        margin: 1pt 0 0;
+        font-size: var(--system-size, 12pt);
+        line-height: 1.05;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: var(--lab);
+      }
+
+      .subtitle {
+        margin: 1.5pt 0 0;
+        font-size: var(--subtitle-size, 6.2pt);
+        line-height: 1.2;
+        color: var(--ink);
+      }
+
+      .authors {
+        margin: 2pt 0 0;
+        font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+        font-size: 5.3pt;
+        line-height: 1.2;
+        color: var(--muted);
+      }
+
+      /* Keep each author's name (and each DOI) on one line; break only between them. */
+      .authors span,
+      .doi .lab-name,
+      .doi-inline {
+        white-space: nowrap;
+      }
+
+      /* Credit line at the bottom of every box: LAB NAME  DOI ... */
+      .doi {
+        margin: auto 0 0;
+        padding-top: 2pt;
+        font-size: 4.9pt;
+        line-height: 1.35;
+        letter-spacing: 0.02em;
+        color: var(--muted);
+      }
+
+      .doi .lab-name {
+        display: inline;
+        margin-right: 3pt;
+        letter-spacing: 0.06em;
+      }
+
+      .talk {
+        display: inline-block;
+        margin-top: 2.5pt;
+        padding: 1.2pt 3.5pt;
+        border-radius: 1.5pt;
+        background: var(--lab);
+        color: var(--white);
+        font-size: 5pt;
+        font-weight: 700;
+        line-height: 1.25;
+      }
+
+      /* ---------- Footer ---------- */
+
+      .footer {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14pt;
+        margin: 0 20pt;
+        padding: 5pt 0 8pt;
+        border-top: 1px solid var(--line);
+      }
+
+      .site {
+        display: flex;
+        align-items: center;
+        gap: 7pt;
+      }
+
+      .site img {
+        width: 25pt;
+        height: 25pt;
+        display: block;
+      }
+
+      .site strong {
+        display: block;
+        font-size: 8.5pt;
+        color: var(--garnet);
+      }
+
+      .site span {
+        display: block;
+        margin-top: 1.5pt;
+        font-size: 5.8pt;
+        font-style: italic;
+        color: var(--muted);
+      }
+
+      /* Faculty legend: each lab's own logo, with the faculty name under it. */
+      .faculty {
+        --logo-h: 14pt; /* every lab logo is this tall */
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: flex-end;
+        gap: 9pt;
+      }
+
+      .faculty li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5pt;
+      }
+
+      .logo {
+        height: var(--logo-h);
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+
+      /* MakeX's logo is white, so it sits on its lab color. */
+      .logo-chip {
+        padding: 2.5pt 4pt;
+        border-radius: 1.5pt;
+        background: var(--lab);
+      }
+
+      /* The Mobile and Wearable Systems Group's mark, as on its homepage:
+         "M/W" in a thin circle next to the group name, both in a monospace face. */
+      .logo-mw {
+        gap: 3pt;
+        font-family: "Geist Mono", Consolas, "Courier New", monospace;
+        font-weight: 600;
+        color: var(--mws-mark);
+      }
+
+      .logo-mw .mw-circle {
+        width: var(--logo-h);
+        height: var(--logo-h);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0.6pt solid currentColor;
+        border-radius: 50%;
+        font-size: calc(var(--logo-h) * 0.33);
+        letter-spacing: -0.06em;
+      }
+
+      .logo-mw .mw-name {
+        font-size: calc(var(--logo-h) * 0.26);
+        line-height: 1.2;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .faculty strong {
+        font-size: 6.2pt;
+        color: var(--ink);
+      }
+
+      .lab-xl {
+        --lab: var(--lab-xl);
+      }
+      .lab-dcs {
+        --lab: var(--lab-dcs);
+      }
+      .lab-makex {
+        --lab: var(--lab-makex);
+      }
+      .lab-mws {
+        --lab: var(--lab-mws);
+      }
+
+      /* The Mammal thumbnail has wide white margins; show only its content. */
+      .crop-mammal {
+        object-view-box: inset(23.4% 1.4% 22.9% 7%);
+      }
+    </style>
+  </head>
+  <body>
+    <article class="card">
+      <header class="header">
+        <img class="header-logo" src="../fsu-lockup-gold.svg" alt="Florida State University" />
+        <div class="header-text">
+          <h1>Ubiquitous Intelligence &amp; Computing Group</h1>
+          <div class="header-meta">
+            <span>Department of Computer Science</span>
+            <span>IMWUT papers &middot; UbiComp / ISWC 2026 &middot; Shanghai &middot; 13&ndash;15 October</span>
+          </div>
+        </div>
+      </header>
+
+      <ul class="papers">
+        <!-- Left column: papers with a talk, in schedule order. -->
+        <li class="paper lab-makex layout-fig-right-meta" style="--fig: 51%">
+          <figure class="fig"><img class="crop-mammal" src="../publications/mammal.png" alt="" /></figure>
+          <div class="head">
+            <h2 class="system">Mammal</h2>
+          </div>
+          <div class="body">
+            <p class="subtitle">Supporting Breastfeeding Monitoring Through Computational Garments with Inter-Body Sensing</p>
+            <p class="authors">
+              <span>Yanfeng Zhao</span>, <span>Morgan Geck</span>, <span>Kate Fernandez</span>, <span>Madison Nicole Jones</span>, <span>Xia Zhou</span>, <span>Jessica L. Ridgway</span>, <span>Te-Yen Wu</span>
+            </p>
+            <p class="doi"><span class="lab-name">MakeX Lab</span> <span class="doi-inline">DOI 10.1145/3831965</span></p>
+          </div>
+          <div class="meta">
+            <span class="talk">Tue 13 Oct &middot; 16:00 &middot; B2 &middot; Ballroom III</span>
+          </div>
+        </li>
+
+        <li class="paper lab-mws layout-corner" style="--fig: 60%">
+          <figure class="fig"><img src="../publications/impactear.png" alt="" /></figure>
+          <div class="head">
+            <h2 class="system">ImpactEar</h2>
+            <span class="talk">Wed 14 Oct &middot; 16:00<br />D5 &middot; Yangtze Hall</span>
+          </div>
+          <div class="body">
+            <p class="subtitle">Cross Activity Ground Reaction Force Estimation using Earable IMUs</p>
+            <p class="authors">
+              <span>Jake Stuchbury-Wass</span>, <span>Mathias Ciliberto</span>, <span>Qiang Yang</span>, <span>Kayla-Jade Butkow</span>, <span>Yang Liu</span>, <span>Tobias R&ouml;ddiger</span>, <span>Ezio Preatoni</span>, <span>Dong Ma</span>, <span>Cecilia Mascolo</span>
+            </p>
+            <p class="doi"><span class="lab-name">Mobile and Wearable Systems Group</span> <span class="doi-inline">DOI 10.1145/3831649</span></p>
+          </div>
+        </li>
+
+        <li class="paper lab-mws layout-fig-left-meta" style="--fig: 44%; --system-size: 8pt">
+          <figure class="fig"><img src="../publications/earable-survey.png" alt="" /></figure>
+          <div class="head">
+            <h2 class="system">A Survey of Earable Technology</h2>
+          </div>
+          <div class="body">
+            <p class="subtitle">Trends, Tools, and the Road Ahead</p>
+            <p class="authors">
+              <span>Changshuo Hu</span>, <span>Qiang Yang</span>, <span>Yang Liu</span>, <span>Tobias R&ouml;ddiger</span>, <span>Kayla-Jade Butkow</span>, <span>Mathias Ciliberto</span>, <span>Adam Luke Pullin</span>, <span>Jake Stuchbury-Wass</span>, <span>Mahbub Hassan</span>, <span>Cecilia Mascolo</span>, <span>Dong Ma</span>
+            </p>
+            <p class="doi"><span class="lab-name">Mobile and Wearable Systems Group</span> <span class="doi-inline">DOI 10.1145/3810217</span></p>
+          </div>
+          <div class="meta">
+            <span class="talk">Thu 15 Oct &middot; 11:00 &middot; F2 &middot; Ballroom III</span>
+          </div>
+        </li>
+
+        <!-- Right column: papers without a talk. -->
+        <li class="paper lab-dcs layout-fig-left" style="--fig: 58%">
+          <figure class="fig"><img src="../publications/synhat-map.jpg" alt="" /></figure>
+          <div class="head">
+            <h2 class="system">SynHAT</h2>
+          </div>
+          <div class="body">
+            <p class="subtitle">A Two-stage Coarse-to-Fine Diffusion Framework for Synthesizing Human Activity Traces</p>
+            <p class="authors">
+              <span>Rongchao Xu</span>, <span>Lin Jiang</span>, <span>Dahai Yu</span>, <span>Ximiao Li</span>, <span>Guang Wang</span>
+            </p>
+            <p class="doi"><span class="lab-name">DCS Lab</span> <span class="doi-inline">DOI 10.1145/3810213</span></p>
+          </div>
+        </li>
+
+        <li class="paper lab-xl layout-fig-right" style="--fig: 50%">
+          <figure class="fig"><img src="../publications/bfmscan.png" alt="" /></figure>
+          <div class="head">
+            <h2 class="system">BFMScan</h2>
+          </div>
+          <div class="body">
+            <p class="subtitle">Enabling Explicit Angle-Resolved Sensing via Beamforming Feedback Matrix</p>
+            <p class="authors">
+              <span>Bofan Li</span>, <span>Zhuoyuan Liu</span>, <span>Zhankai Ye</span>, <span>Weikuan Yu</span>, <span>Xin Liu</span>
+            </p>
+            <p class="doi"><span class="lab-name">XL-Stack Lab</span> <span class="doi-inline">DOI 10.1145/3832009</span></p>
+          </div>
+        </li>
+
+        <li class="paper lab-xl layout-fig-left" style="--fig: 50%">
+          <figure class="fig"><img src="../publications/muralfi.png" alt="" /></figure>
+          <div class="head">
+            <h2 class="system">MURAL-Fi</h2>
+          </div>
+          <div class="body">
+            <p class="subtitle">Multi-User Respiration Authentication Leveraging WiFi</p>
+            <p class="authors">
+              <span>Bofan Li</span>, <span>Xin Liu</span>, <span>Yichao Wang</span>, <span>Yili Ren</span>, <span>Weikuan Yu</span>
+            </p>
+            <p class="doi"><span class="lab-name">XL-Stack Lab</span> <span class="doi-inline">DOI 10.1145/3790111</span></p>
+          </div>
+        </li>
+      </ul>
+
+      <footer class="footer">
+        <div class="site">
+          <img src="../fsu-uic-qr.svg" alt="QR code linking to fsu-uic.github.io" />
+          <div>
+            <strong>fsu-uic.github.io</strong>
+            <span>Building intelligence that lives, learns, and works in the real world.</span>
+          </div>
+        </div>
+        <ul class="faculty" aria-label="Faculty and labs">
+          <li class="lab-makex">
+            <span class="logo logo-chip"><img src="../labs/makex.png" alt="MakeX Lab" style="object-view-box: inset(7.1% 0.9% 14.3% 1.8%)" /></span>
+            <strong>Te-Yen Wu</strong>
+          </li>
+          <li class="lab-mws">
+            <span class="logo logo-mw" aria-label="Mobile and Wearable Systems Group">
+              <span class="mw-circle">M/W</span>
+              <span class="mw-name">Mobile + Wearable<br />Systems Group</span>
+            </span>
+            <strong>Yang Liu</strong>
+          </li>
+          <li class="lab-dcs">
+            <span class="logo"><img src="../labs/dcs.png" alt="DCS Lab" style="object-view-box: inset(3.2% 1.3% 2.4% 1.3%)" /></span>
+            <strong>Guang Wang</strong>
+          </li>
+          <li class="lab-xl">
+            <span class="logo"><img src="../labs/xl-stack-horizontal-C.png" alt="XL-Stack Lab" style="object-view-box: inset(13.4% 3.8% 13.4% 3.6%)" /></span>
+            <strong>Xin Liu</strong>
+          </li>
+        </ul>
+      </footer>
+    </article>
+  </body>
+</html>
