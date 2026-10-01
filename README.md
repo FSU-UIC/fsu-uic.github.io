@@ -18,7 +18,9 @@ Then visit [http://localhost:8000](http://localhost:8000).
 
 - `index.html` contains all website content.
 - `styles.css` contains the responsive layout and visual design.
-- `assets/` contains the architecture figure and favicon.
+- `script.js` connects the interactive research layers to the member lab profiles.
+- `assets/` contains the architecture visuals, official lab identity images,
+  publication thumbnails, and favicon.
 
 ## GitHub Pages
 
