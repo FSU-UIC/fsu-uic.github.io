@@ -260,7 +260,7 @@
       .authors {
         margin: 2pt 0 0;
         font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
-        font-size: 5.3pt;
+        font-size: var(--authors-size, 5.3pt);
         line-height: 1.2;
         color: var(--muted);
       }
@@ -276,7 +276,7 @@
       .doi {
         margin: auto 0 0;
         padding-top: 2pt;
-        font-size: 4.9pt;
+        font-size: var(--doi-size, 4.9pt);
         line-height: 1.35;
         letter-spacing: 0.02em;
         color: var(--muted);
@@ -461,7 +461,10 @@
           </div>
         </li>
 
-        <li class="paper lab-mws layout-fig-right-meta" style="--fig: 51%">
+        <li
+          class="paper lab-mws layout-fig-right-meta"
+          style="--fig: 51%; --system-size: 10pt; --subtitle-size: 5.8pt; --authors-size: 4.9pt; --doi-size: 4.7pt"
+        >
           <figure class="fig"><img src="../publications/impactear.png" alt="" /></figure>
           <div class="head">
             <h2 class="system">ImpactEar</h2>
