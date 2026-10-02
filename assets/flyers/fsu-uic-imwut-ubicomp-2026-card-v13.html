@@ -339,7 +339,7 @@
         color: var(--muted);
       }
 
-      /* Faculty legend: each lab's own logo, with the faculty name under it. */
+      /* Lab legend: each member lab's own mark. */
       .faculty {
         --logo-h: 14pt; /* every lab logo is this tall */
         margin: 0;
@@ -352,9 +352,7 @@
 
       .faculty li {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        gap: 2.5pt;
       }
 
       .logo {
@@ -403,11 +401,6 @@
         letter-spacing: 0.06em;
         text-transform: uppercase;
         white-space: nowrap;
-      }
-
-      .faculty strong {
-        font-size: 6.2pt;
-        color: var(--ink);
       }
 
       .lab-xl {
@@ -553,22 +546,18 @@
         <ul class="faculty" aria-label="Faculty and labs">
           <li class="lab-makex">
             <span class="logo logo-chip"><img src="../labs/makex.png" alt="MakeX Lab" style="object-view-box: inset(7.1% 0.9% 14.3% 1.8%)" /></span>
-            <strong>Te-Yen Wu</strong>
           </li>
           <li class="lab-mws">
             <span class="logo logo-mw" aria-label="Mobile and Wearable Systems Group">
               <span class="mw-circle">M/W</span>
               <span class="mw-name">Mobile + Wearable<br />Systems Group</span>
             </span>
-            <strong>Yang Liu</strong>
           </li>
           <li class="lab-dcs">
             <span class="logo"><img src="../labs/dcs.png" alt="DCS Lab" style="object-view-box: inset(3.2% 1.3% 2.4% 1.3%)" /></span>
-            <strong>Guang Wang</strong>
           </li>
           <li class="lab-xl">
             <span class="logo"><img src="../labs/xl-stack-horizontal-C.png" alt="XL-Stack Lab" style="object-view-box: inset(13.4% 3.8% 13.4% 3.6%)" /></span>
-            <strong>Xin Liu</strong>
           </li>
         </ul>
       </footer>
