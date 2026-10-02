@@ -202,15 +202,6 @@
           "body fig";
       }
 
-      /* Figure on the left, text on the right. */
-      .layout-fig-left {
-        grid-template-columns: var(--fig, 50%) minmax(0, 1fr);
-        grid-template-rows: auto minmax(0, 1fr);
-        grid-template-areas:
-          "fig head"
-          "fig body";
-      }
-
       /* Figure on the right with the talk and DOI under it; text on the left. */
       .layout-fig-right-meta {
         grid-template-columns: minmax(0, 1fr) var(--fig, 50%);
@@ -219,22 +210,6 @@
           "head fig"
           "body fig"
           "body meta";
-      }
-
-      /* Figure on the left with the talk and DOI under it; text on the right. */
-      .layout-fig-left-meta {
-        grid-template-columns: var(--fig, 50%) minmax(0, 1fr);
-        grid-template-rows: auto minmax(0, 1fr) auto;
-        grid-template-areas:
-          "fig head"
-          "fig body"
-          "meta body";
-      }
-
-      .layout-fig-left-meta .meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5pt;
       }
 
       .meta {
@@ -252,15 +227,6 @@
       .meta .doi {
         margin: 0;
         padding: 0;
-      }
-
-      /* Figure in the top-left corner, name beside it, details across the bottom. */
-      .layout-corner {
-        grid-template-columns: var(--fig, 62%) minmax(0, 1fr);
-        grid-template-rows: minmax(0, 1fr) auto;
-        grid-template-areas:
-          "fig head"
-          "body body";
       }
 
       /* ---------- Type: one role, one style ---------- */
@@ -495,11 +461,10 @@
           </div>
         </li>
 
-        <li class="paper lab-mws layout-corner" style="--fig: 60%">
+        <li class="paper lab-mws layout-fig-right-meta" style="--fig: 51%">
           <figure class="fig"><img src="../publications/impactear.png" alt="" /></figure>
           <div class="head">
             <h2 class="system">ImpactEar</h2>
-            <span class="talk">Wed 14 Oct &middot; 16:00<br />D5 &middot; Yangtze Hall</span>
           </div>
           <div class="body">
             <p class="subtitle">Cross Activity Ground Reaction Force Estimation using Earable IMUs</p>
@@ -508,9 +473,12 @@
             </p>
             <p class="doi"><span class="lab-name">Mobile and Wearable Systems Group</span> <span class="doi-inline">DOI 10.1145/3831649</span></p>
           </div>
+          <div class="meta">
+            <span class="talk">Wed 14 Oct &middot; 16:00 &middot; D5 &middot; Yangtze Hall</span>
+          </div>
         </li>
 
-        <li class="paper lab-mws layout-fig-left-meta" style="--fig: 44%; --system-size: 8pt">
+        <li class="paper lab-mws layout-fig-right-meta" style="--fig: 44%; --system-size: 8pt">
           <figure class="fig"><img src="../publications/earable-survey.png" alt="" /></figure>
           <div class="head">
             <h2 class="system">A Survey of Earable Technology</h2>
@@ -528,7 +496,7 @@
         </li>
 
         <!-- Right column: papers without a talk. -->
-        <li class="paper lab-dcs layout-fig-left" style="--fig: 58%">
+        <li class="paper lab-dcs layout-fig-right" style="--fig: 58%">
           <figure class="fig"><img src="../publications/synhat-map.jpg" alt="" /></figure>
           <div class="head">
             <h2 class="system">SynHAT</h2>
@@ -556,7 +524,7 @@
           </div>
         </li>
 
-        <li class="paper lab-xl layout-fig-left" style="--fig: 50%">
+        <li class="paper lab-xl layout-fig-right" style="--fig: 50%">
           <figure class="fig"><img src="../publications/muralfi.png" alt="" /></figure>
           <div class="head">
             <h2 class="system">MURAL-Fi</h2>
